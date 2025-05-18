@@ -1,54 +1,39 @@
-<?php
+<?php 
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+require_once('phpmailer/PHPMailerAutoload.php');
+$mail = new PHPMailer;
+$mail->CharSet = 'utf-8';
 
-require 'phpmailer/src/Exception.php'; // Укажите правильный путь
-require 'phpmailer/src/PHPMailer.php'; // Укажите правильный путь
-require 'phpmailer/src/SMTP.php';    // Укажите правильный путь
+$name = $_POST['user_name'];
+$phone = $_POST['user_phone'];
 
-// Проверяем, была ли отправлена форма
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-  // Получаем данные из формы
-  $name = $_POST["name"];
-  $phone = $_POST["phone"];
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'wd_website@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = '0410besedaOL72!'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-  // Настройки для отправки письма
-  $to = "wd_website@mail.ru"; // Замените на ваш email
-  $subject = "Новая заявка с сайта";
-  $message = "Имя: " . $name . "\n";
-  $message .= "Телефон: " . $phone;
+$mail->setFrom('wd_website@mail.ru'); // от кого будет уходить письмо?
+$mail->addAddress('besedin_b@bk.ru');     // Кому будет уходить письмо 
+//$mail->addAddress('ellen@example.com');               // Name is optional
+//$mail->addReplyTo('info@example.com', 'Information');
+//$mail->addCC('cc@example.com');
+//$mail->addBCC('bcc@example.com');
+//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+$mail->isHTML(true);                                  // Set email format to HTML
 
-  // Настройки PHPMailer
-  $mail = new PHPMailer(true); // true включает обработку исключений
+$mail->Subject = 'Заявка с тестового сайта';
+$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone;
+$mail->AltBody = '';
 
-  try {
-    // Настройки сервера
-    $mail->SMTPDebug = 0; // 0 = выключить отладку, 1 = клиентские сообщения, 2 = клиентские и серверные сообщения
-    $mail->isSMTP();                                      // Указываем, что будем отправлять через SMTP
-    $mail->Host = 'smtp.mail.ru';  // Замените на ваш SMTP сервер (например, smtp.gmail.com)
-    $mail->SMTPAuth = true;                               // Включаем аутентификацию SMTP
-    $mail->Username = 'wd_website@mail.ru';   // Замените на ваш логин от почты
-    $mail->Password = '0410besedaOL72!';             // Замените на ваш пароль от почты
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
-
-    // Отправитель и получатель
-    $mail->setFrom('wd_website@mail.ru'); // Замените на свой email и имя
-    $mail->addAddress($to);     // Add a recipient
-
-    // Контент письма
-    $mail->isHTML(false);                                  // Указываем, что письмо отправляется в текстовом формате
-    $mail->Subject = $subject;
-    $mail->Body    = $message;
-
-    $mail->send();
-    echo 'Сообщение успешно отправлено!';
-  } catch (Exception $e) {
-    echo "Сообщение не было отправлено. Ошибка: {$mail->ErrorInfo}";
-  }
+if(!$mail->send()) {
+    echo 'Error';
 } else {
-  // Если форма не была отправлена, показываем сообщение об ошибке
-  echo "Ошибка: форма не была отправлена.";
+    header('location: thank-you.html');
 }
+?>
