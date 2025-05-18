@@ -3,9 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'path/to/PHPMailer/src/Exception.php'; // Укажите правильный путь
-require 'path/to/PHPMailer/src/PHPMailer.php'; // Укажите правильный путь
-require 'path/to/PHPMailer/src/SMTP.php';    // Укажите правильный путь
+require 'phpmailer/Exception.php'; // Укажите правильный путь
+require 'phpmailer/PHPMailer.php'; // Укажите правильный путь
+require 'phpmailer/SMTP.php';    // Укажите правильный путь
 
 // Проверяем, была ли отправлена форма
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,4 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Если форма не была отправлена, показываем сообщение об ошибке
   echo "Ошибка: форма не была отправлена.";
 }
-?>
