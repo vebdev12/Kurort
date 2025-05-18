@@ -3,9 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/Exception.php'; // Укажите правильный путь
-require 'phpmailer/PHPMailer.php'; // Укажите правильный путь
-require 'phpmailer/SMTP.php';    // Укажите правильный путь
+require 'phpmailer/src/Exception.php'; // Укажите правильный путь
+require 'phpmailer/src/PHPMailer.php'; // Укажите правильный путь
+require 'phpmailer/src/SMTP.php';    // Укажите правильный путь
 
 // Проверяем, была ли отправлена форма
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Port = 587;                                    // TCP port to connect to
 
     // Отправитель и получатель
-    $mail->setFrom('wd_website@mail.ru', 'Kurort'); // Замените на свой email и имя
+    $mail->setFrom('wd_website@mail.ru'); // Замените на свой email и имя
     $mail->addAddress($to);     // Add a recipient
 
     // Контент письма
