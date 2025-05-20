@@ -84,7 +84,7 @@
           <nav class="menu">
             <ul class="list">
               <li class="list__item">
-                <a class="list__item-link" href="#">Курорт</a>
+                <a class="list__item-link" href="gallery.html">Галерея</a>
               </li>
               <li class="list__item">
                 <a class="list__item-link" href="#">Проживание</a>
@@ -116,7 +116,7 @@
           <p class="main__content-text">
             Оставьте заявку, и мы перезвоним вам в ближайшее время
           </p>
-          <button class="products__btn">ЗАБРОНИРОВАТЬ</button>
+          <button class="products__btn modal-trigger">ЗАБРОНИРОВАТЬ</button>
         </div>
       </div>
     </main>
@@ -401,28 +401,41 @@
           </button>
           <h1 class="modal__title">Бронь</h1>
 
-          <form class="modal__form" action="mail.php" method="post">
+          <form class="modal__form">
             <input
               class="modal__input"
               placeholder="Ваше имя"
-              name="user_name"
+              name="name"
               id="user_name"
             />
             <input
               class="modal__input"
               placeholder="Телефон *"
-              name="user_phone"
+              name="phone"
               id="user_phone"
               required
             />
-            <button class="products__btn" type="submit">ОТПРАВИТЬ</button>
+            <textarea
+              id="user_text"
+              name="text"
+              class="modal__input-textarea"
+              placeholder="текст заявки (не обязательно)"
+            ></textarea>
+            <button
+              id="send_modal"
+              class="products__btn"
+              style="width: 100%; max-width: 100%"
+              type="submit"
+            >
+              ОТПРАВИТЬ
+            </button>
           </form>
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="mail.php"></script>
+    <script src="request.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

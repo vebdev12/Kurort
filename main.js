@@ -74,17 +74,15 @@ function countdown(targetDate, elementId) {
       (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     document.getElementById(elementId).innerHTML =
       days + "д " + hours + "ч " + minutes + "м ";
   }
 
-  updateCountdown(); // Вызываем сразу, чтобы не ждать секунду
+  updateCountdown();
   const intervalId = setInterval(updateCountdown, 1000);
 }
 
-// Замените на желаемую дату окончания обратного отсчета
 const targetDate = "2025-05-31T23:59:59";
 const countdownElementId = "countdown";
 
@@ -94,9 +92,6 @@ const burger = document.querySelector(".burger");
 const menu = document.querySelector(".header__bottom");
 const menuClose = document.querySelector(".header__close");
 
-console.log(burger);
-console.log(menu);
-
 burger.addEventListener("click", () => {
   console.log(123);
 
@@ -105,4 +100,39 @@ burger.addEventListener("click", () => {
 
 menuClose.addEventListener("click", () => {
   menu.classList.remove("header__bottom--active");
+});
+
+// зявка
+
+const name_input = document.querySelector("#user_name");
+const phone_input = document.querySelector("#user_phone");
+const text_input = document.querySelector("#user_text");
+const send_btn = document.querySelector("#send_modal");
+const modal_form = document.querySelector(".modal__form");
+
+const fields = {
+  name: "",
+  phone: "",
+  text: "",
+};
+
+modal_form.addEventListener("change", (e) => {
+  fields[e.target.name] = e.target.value;
+});
+
+const sendRequest = async ({ name, phone, text }) => {
+  return await request("/requests", "POST", { name, phone, text });
+};
+
+send_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  sendRequest(fields)
+    .then((res) => {
+      alert("Спасибо! Заявка успешно отправлена");
+      modal.classList.remove("modal--active");
+    })
+    .catch((e) => {
+      alert("Произошла ошибка");
+    });
 });
