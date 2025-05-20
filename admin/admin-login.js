@@ -26,7 +26,7 @@ login_btn.addEventListener("click", (e) => {
   login_user({ login, password })
     .then((res) => {
       localStorage.setItem("token", res.token);
-      window.location.href = "/admin";
+      window.location.pathname = "/Kurort/admin";
     })
     .catch((e) => {
       console.log(e);
