@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.pathname = "/admin/login.html";
+  window.location.href = "login.html";
 }
 
 const requests_inner = document.querySelector(".admin__inner");
