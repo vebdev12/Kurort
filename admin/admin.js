@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.pathname = "/Kurort/admin/login.html";
+  window.location.pathname = "Kurort/admin/login";
 }
 
 const requests_inner = document.querySelector(".admin__inner");
