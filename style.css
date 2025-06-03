@@ -600,6 +600,150 @@ img {
   animation: pulse 1s alternate-reverse infinite;
 }
 
+.accordion {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.accordion__item-body__item {
+  list-style: circle;
+}
+
+.accordion__title {
+  margin-bottom: 30px;
+}
+
+.accordion__inner {
+}
+
+.accordion__item.active .accordion__item-head__img {
+  transform: rotate(180deg);
+}
+
+.accordion__item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion__title {
+  font-size: 37px;
+  text-align: center;
+}
+
+.accordion__item {
+  margin-bottom: 20px;
+}
+
+.accordion__item-head__img {
+  width: 25px;
+  height: 25px;
+}
+
+.accordion__item-head {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.accordion__item-head__title {
+  font-size: 18px;
+}
+
+.accordion__item-body {
+  display: none;
+
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+
+  margin-top: 10px;
+}
+
+.accordion__item-body__text,
+.accordion__item-body__item {
+  font-size: 14px;
+  line-height: 21px;
+  word-break: normal;
+}
+
+.accordion__item.active .accordion__item-body {
+  display: block;
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.images__inner {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: 1000px;
+  gap: 20px;
+}
+
+.images__img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.images__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+  display: none; /* Скрываем по умолчанию */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Обеспечивает отображение над другими элементами */
+}
+
+.images__modal {
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal img {
+  max-width: 90vw; /* Максимальная ширина картинки */
+  max-height: 90vh; /* Максимальная высота картинки */
+  display: block; /* Убираем отступы под картинкой */
+}
+
+/* Стиль для кнопки закрытия */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white; /* Цвет крестика */
+  cursor: pointer;
+  /* background: rgba(0,0,0,0.5);  Можно добавить фон для крестика*/
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  z-index: 1001; /* Отображение над изображением */
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
