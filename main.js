@@ -59,6 +59,8 @@ close.addEventListener("click", () => {
 function countdown(targetDate, elementId) {
   const targetTime = new Date(targetDate).getTime();
 
+  const intervalId = setInterval(updateCountdown, 1000);
+
   function updateCountdown() {
     const now = new Date().getTime();
     const difference = targetTime - now;
@@ -80,7 +82,6 @@ function countdown(targetDate, elementId) {
   }
 
   updateCountdown();
-  const intervalId = setInterval(updateCountdown, 1000);
 }
 
 const targetDate = "2025-05-31T23:59:59";
