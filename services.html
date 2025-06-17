@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Услуги — Домики у Реки</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --accent: #bee470;
+        --primary: #009db7;
+        --text-dark: #2c3e50;
+        --text-light: #f4f4f4;
+        --bg-light: #f9fafb;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Rubik", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+      }
+
+      .page-header {
+        background-color: white;
+        padding: 3rem 2rem 1rem;
+        text-align: center;
+        border-bottom: 3px solid var(--accent);
+      }
+
+      .page-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .services {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+        width: 400px;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .service-card h3 {
+        margin-top: 0.5rem;
+        color: var(--primary);
+      }
+
+      .service-card p {
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+        line-height: 1.5;
+      }
+
+      .cta {
+        text-align: center;
+        margin: 4rem 2rem;
+      }
+
+      .cta h3 {
+        margin-bottom: 8px;
+      }
+
+      .cta p {
+        margin-bottom: 25px;
+      }
+
+      .cta button {
+        background-color: var(--accent);
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .cta button:hover {
+        background-color: #b0d22c;
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+      }
+    </style>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="container">
+          <div class="header__top">
+            <p class="header__top-text">
+              База для семейного и корпаративного отдыха
+            </p>
+            <div class="header__top-item">
+              <img
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000"
+                alt=""
+              />
+              <a class="header__top-item__text" href="index.html#map"
+                >Мы на карте</a
+              >
+            </div>
+            <a class="header__top-item logo" href="index.html">
+              <div class="logo__wrapper">
+                <img
+                  style="width: 35px"
+                  class="header__logo"
+                  src="https://img.icons8.com/?size=100&id=UCyrRHn9Xloa&format=png&color=FFFFFF"
+                  alt=""
+                />
+              </div>
+              <span class="header__top-logo__text">Курорт</span>
+            </a>
+            <div class="header__top-item">
+              <img
+                id="phone"
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=sBZ5absz7zD2&format=png&color=3A939E"
+                alt=""
+              />
+              <div class="header__top-item__inner">
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+70000000000"
+                  >+7(000) 000-00-00</a
+                >
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+71111111111"
+                  >+7(111) 111-11-11</a
+                >
+              </div>
+            </div>
+            <button class="header__top-btn modal-trigger">
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <button class="header__close">
+            <img
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=FFFFFF"
+              alt=""
+            />
+          </button>
+          <nav class="menu">
+            <ul class="list">
+              <li class="list__item">
+                <a class="list__item-link" href="gallery.html">Галерея</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="about.html">О нас</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="services.html">Услуги</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="promotions.html">Акции</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="events.html">Мероприятия</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <h2>Наши услуги</h2>
+      <p>Все, что нужно для идеального отдыха на природе</p>
+    </section>
+
+    <section class="services">
+      <div class="service-card">
+        <img
+          src="https://bogatirstroy.com/wp-content/uploads/2024/01/mangalnaya-zona-iz-kirpicha.jpg"
+          alt="Костровая зона"
+        />
+        <h3>Костровая зона</h3>
+        <p>
+          Уютные места с дровами для вечерних посиделок у костра. Есть скамейки
+          и защита от дождя.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="https://mangal-ask.ru/upload/iblock/27b/27b05acbe6b9e28dea8bdffbc5607b33.jpg"
+          alt="Мангал"
+        />
+        <h3>Мангал и барбекю</h3>
+        <p>
+          Предоставляем решетки, уголь и мангалы для идеального шашлыка и гриля.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="https://47kater.ru/media/168/conversions/cover3-cover.jpg"
+          alt="Аренда лодок"
+        />
+        <h3>Аренда лодок</h3>
+        <p>
+          Прогулки по реке или рыбалка – к вашим услугам лодки, весла и жилеты.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="https://lesshop.ru/wa-data/public/photos/56/17/1756/1756.970.jpg"
+          alt="Баня"
+        />
+        <h3>Русская баня</h3>
+        <p>
+          Баня на дровах с веником, душем и зоной отдыха. Отлично снимает
+          усталость после прогулки.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="https://resanta-spb.ru/upload/iblock/08b/08ba9be4f2285c423baf80194584d112.jpg"
+          alt="Парковка"
+        />
+        <h3>Бесплатная парковка</h3>
+        <p>
+          Охраняемая стоянка рядом с домиками для вашего спокойствия и удобства.
+        </p>
+      </div>
+    </section>
+
+    <div class="cta">
+      <h3>Готовы забронировать?</h3>
+      <p>Выберите домик и приезжайте отдыхать — мы все подготовим для вас!</p>
+      <button class="modal-trigger">Забронировать сейчас</button>
+    </div>
+
+    <footer>
+      <p>© 2025 Kurort. Все права защищены.</p>
+    </footer>
+
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__body">
+          <button class="modal__close">
+            <img
+              style="width: 25px"
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=000000"
+              alt=""
+            />
+          </button>
+          <h1 class="modal__title">Бронь</h1>
+
+          <form class="modal__form">
+            <input
+              class="modal__input"
+              placeholder="Ваше имя"
+              name="name"
+              id="user_name"
+            />
+            <input
+              class="modal__input"
+              placeholder="Телефон *"
+              name="phone"
+              id="user_phone"
+              required
+            />
+            <textarea
+              id="user_text"
+              name="text"
+              class="modal__input-textarea"
+              placeholder="текст заявки (не обязательно)"
+            ></textarea>
+            <button
+              id="send_modal"
+              class="products__btn"
+              style="width: 100%; max-width: 100%"
+              type="submit"
+            >
+              ОТПРАВИТЬ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="request.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

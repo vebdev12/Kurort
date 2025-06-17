@@ -84,7 +84,7 @@ function countdown(targetDate, elementId) {
   updateCountdown();
 }
 
-const targetDate = "2025-05-31T23:59:59";
+const targetDate = "2025-07-31T23:59:59";
 const countdownElementId = "countdown";
 
 countdown(targetDate, countdownElementId);

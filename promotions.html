@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Акции — Домики у Реки</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --accent: #bee470;
+        --primary: #009db7;
+        --text-dark: #2c3e50;
+        --text-light: #f4f4f4;
+        --bg-light: #f9fafb;
+      }
+
+      .page-header {
+        background-color: white;
+        padding: 3rem 2rem 1rem;
+        text-align: center;
+        border-bottom: 3px solid var(--accent);
+      }
+
+      .page-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .promo-section {
+        padding: 3rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .promo-card {
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      .promo-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .promo-title {
+        color: var(--primary);
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .promo-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-top: 0.5rem;
+      }
+
+      .promo-card.active .promo-content {
+        max-height: 200px;
+      }
+
+      .promo-title span {
+        background-color: var(--accent);
+        color: black;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="container">
+          <div class="header__top">
+            <p class="header__top-text">
+              База для семейного и корпаративного отдыха
+            </p>
+            <div class="header__top-item">
+              <img
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000"
+                alt=""
+              />
+              <a class="header__top-item__text" href="#map">Мы на карте</a>
+            </div>
+            <div class="header__top-item logo">
+              <div class="logo__wrapper">
+                <img
+                  style="width: 35px"
+                  class="header__logo"
+                  src="https://img.icons8.com/?size=100&id=UCyrRHn9Xloa&format=png&color=FFFFFF"
+                  alt=""
+                />
+              </div>
+              <span class="header__top-logo__text">Курорт</span>
+            </div>
+            <div class="header__top-item">
+              <img
+                id="phone"
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=sBZ5absz7zD2&format=png&color=3A939E"
+                alt=""
+              />
+              <div class="header__top-item__inner">
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+70000000000"
+                  >+7(000) 000-00-00</a
+                >
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+71111111111"
+                  >+7(111) 111-11-11</a
+                >
+              </div>
+            </div>
+            <button class="header__top-btn modal-trigger">
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <button class="header__close">
+            <img
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=FFFFFF"
+              alt=""
+            />
+          </button>
+          <nav class="menu">
+            <ul class="list">
+              <li class="list__item">
+                <a class="list__item-link" href="gallery.html">Галерея</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="about.html">О нас</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="services.html">Услуги</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="events.html">Акции</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="events.html">Мероприятия</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <h2>Сезонные акции и спецпредложения</h2>
+      <p>Успей забронировать по выгодным условиям!</p>
+    </section>
+
+    <div class="wrapper">
+      <section class="promo-section">
+        <div class="promo-card">
+          <div class="promo-title" onclick="togglePromo(this)">
+            «Выходные у костра» <span>-20%</span>
+          </div>
+          <div class="promo-content">
+            <p>
+              Скидка 20% при бронировании домика на пятницу + субботу. Мангал,
+              дрова и плед в подарок!
+            </p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-title" onclick="togglePromo(this)">
+            «Баня + домик» <span>-25%</span>
+          </div>
+          <div class="promo-content">
+            <p>
+              При аренде домика от 2 ночей — скидка 25% на посещение русской
+              бани.
+            </p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-title" onclick="togglePromo(this)">
+            «Рыбалка ранним утром» <span>Подарок</span>
+          </div>
+          <div class="promo-content">
+            <p>
+              Гостям, выезжающим до 10:00, бесплатная аренда лодки на утреннюю
+              рыбалку.
+            </p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-title" onclick="togglePromo(this)">
+            Подарочный сертификат <span>новинка</span>
+          </div>
+          <div class="promo-content">
+            <p>
+              Дарите отдых: приобретите сертификат на отдых на любую сумму.
+              Идеально для праздников!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 Kurort. Все права защищены.</p>
+      </footer>
+    </div>
+
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__body">
+          <button class="modal__close">
+            <img
+              style="width: 25px"
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=000000"
+              alt=""
+            />
+          </button>
+          <h1 class="modal__title">Бронь</h1>
+
+          <form class="modal__form">
+            <input
+              class="modal__input"
+              placeholder="Ваше имя"
+              name="name"
+              id="user_name"
+            />
+            <input
+              class="modal__input"
+              placeholder="Телефон *"
+              name="phone"
+              id="user_phone"
+              required
+            />
+            <textarea
+              id="user_text"
+              name="text"
+              class="modal__input-textarea"
+              placeholder="текст заявки (не обязательно)"
+            ></textarea>
+            <button
+              id="send_modal"
+              class="products__btn"
+              style="width: 100%; max-width: 100%"
+              type="submit"
+            >
+              ОТПРАВИТЬ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function togglePromo(element) {
+        const card = element.closest(".promo-card");
+        card.classList.toggle("active");
+      }
+
+      // Анимация появления карточек при прокрутке
+      const cards = document.querySelectorAll(".promo-card");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="request.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

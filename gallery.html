@@ -20,7 +20,9 @@
                 src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000"
                 alt=""
               />
-              <a class="header__top-item__text" href="#map">Мы на карте</a>
+              <a class="header__top-item__text" href="index.html#map"
+                >Мы на карте</a
+              >
             </div>
             <a class="header__top-item logo" href="index.html">
               <div class="logo__wrapper">
@@ -70,19 +72,19 @@
           <nav class="menu">
             <ul class="list">
               <li class="list__item">
-                <a class="list__item-link" href="#">Галерея</a>
+                <a class="list__item-link" href="gallery.html">Галерея</a>
               </li>
               <li class="list__item">
                 <a class="list__item-link" href="about.html">О нас</a>
               </li>
               <li class="list__item">
-                <a class="list__item-link" href="#">Услуги</a>
+                <a class="list__item-link" href="services.html">Услуги</a>
               </li>
               <li class="list__item">
-                <a class="list__item-link" href="#">Акции</a>
+                <a class="list__item-link" href="promotions.html">Акции</a>
               </li>
               <li class="list__item">
-                <a class="list__item-link" href="#">Мероприятия</a>
+                <a class="list__item-link" href="events.html">Мероприятия</a>
               </li>
             </ul>
           </nav>
@@ -154,6 +156,54 @@
       </div>
     </div>
 
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__body">
+          <button class="modal__close">
+            <img
+              style="width: 25px"
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=000000"
+              alt=""
+            />
+          </button>
+          <h1 class="modal__title">Бронь</h1>
+
+          <form class="modal__form">
+            <input
+              class="modal__input"
+              placeholder="Ваше имя"
+              name="name"
+              id="user_name"
+            />
+            <input
+              class="modal__input"
+              placeholder="Телефон *"
+              name="phone"
+              id="user_phone"
+              required
+            />
+            <textarea
+              id="user_text"
+              name="text"
+              class="modal__input-textarea"
+              placeholder="текст заявки (не обязательно)"
+            ></textarea>
+            <button
+              id="send_modal"
+              class="products__btn"
+              style="width: 100%; max-width: 100%"
+              type="submit"
+            >
+              ОТПРАВИТЬ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="request.js"></script>
+
     <script>
       const openModalImage = document.querySelectorAll("#openModalImage");
       const modalOverlay = document.getElementById("modalOverlay");
@@ -183,5 +233,7 @@
         }
       });
     </script>
+
+    <script src="main.js"></script>
   </body>
 </html>
