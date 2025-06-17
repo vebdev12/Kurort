@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мероприятия — Домики у Реки</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      :root {
+        --accent: #bee470;
+        --primary: #009db7;
+        --text-dark: #2c3e50;
+        --text-light: #f4f4f4;
+        --bg-light: #f9fafb;
+      }
+
+      .page-header {
+        background-color: white;
+        padding: 3rem 2rem 1rem;
+        text-align: center;
+        border-bottom: 3px solid var(--accent);
+      }
+
+      .page-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .swiper {
+        padding: 3rem 2rem;
+        height: 500px !important;
+      }
+      .swiper-wrapper {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .slide-content {
+        padding: 1.5rem;
+      }
+
+      .slide-content h3 {
+        margin: 0 0 0.5rem;
+        color: var(--primary);
+      }
+
+      .slide-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--primary);
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .swiper-slide img {
+          height: 160px;
+        }
+      }
+    </style>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="container">
+          <div class="header__top">
+            <p class="header__top-text">
+              База для семейного и корпаративного отдыха
+            </p>
+            <div class="header__top-item">
+              <img
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000"
+                alt=""
+              />
+              <a class="header__top-item__text" href="#map">Мы на карте</a>
+            </div>
+            <div class="header__top-item logo">
+              <div class="logo__wrapper">
+                <img
+                  style="width: 35px"
+                  class="header__logo"
+                  src="https://img.icons8.com/?size=100&id=UCyrRHn9Xloa&format=png&color=FFFFFF"
+                  alt=""
+                />
+              </div>
+              <span class="header__top-logo__text">Курорт</span>
+            </div>
+            <div class="header__top-item">
+              <img
+                id="phone"
+                style="width: 25px"
+                src="https://img.icons8.com/?size=100&id=sBZ5absz7zD2&format=png&color=3A939E"
+                alt=""
+              />
+              <div class="header__top-item__inner">
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+70000000000"
+                  >+7(000) 000-00-00</a
+                >
+                <a
+                  class="header__top-item__link"
+                  style="display: block"
+                  href="tel:+71111111111"
+                  >+7(111) 111-11-11</a
+                >
+              </div>
+            </div>
+            <button class="header__top-btn modal-trigger">
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <button class="header__close">
+            <img
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=FFFFFF"
+              alt=""
+            />
+          </button>
+          <nav class="menu">
+            <ul class="list">
+              <li class="list__item">
+                <a class="list__item-link" href="gallery.html">Галерея</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="about.html">О нас</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="services.html">Услуги</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="events.html">Акции</a>
+              </li>
+              <li class="list__item">
+                <a class="list__item-link" href="events.html">Мероприятия</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <h2>Мероприятия и события</h2>
+      <p>Проводим атмосферные встречи на природе — для вас и ваших близких</p>
+    </section>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img
+            src="https://img.freepik.com/premium-photo/people-sitting-around-bonfire-dark_670382-19282.jpg"
+            alt="Ночь у костра"
+          />
+          <div class="slide-content">
+            <h3>Ночь у костра</h3>
+            <p>
+              Каждую субботу — вечер с гитарой, горячим глинтвейном и живым
+              общением у костра.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img
+            src="https://stayersportswear.com/internet_magazin/upload/resize_cache/iblock/3cb/400_400_1/3cbf8371400938bb4ec4fee6322a8965.jpg"
+            alt="Поход в лес"
+          />
+          <div class="slide-content">
+            <h3>Поход в лес</h3>
+            <p>
+              Совместный маршрут с инструктором по живописной тропе — знакомство
+              с природой и легендами края.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img
+            src="https://vetandlife.ru/wp-content/uploads/2022/06/%D1%80%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0.jpg"
+            alt="День рыбака"
+          />
+          <div class="slide-content">
+            <h3>День рыбака</h3>
+            <p>
+              Турнир по рыбалке среди гостей, призы, уха из свежей рыбы и
+              чаепитие на берегу.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img
+            src="https://ic.pics.livejournal.com/gotskaya/15977901/171085/171085_original.jpg"
+            alt="Новогодняя ночь"
+          />
+          <div class="slide-content">
+            <h3>Новогодняя ночь</h3>
+            <p>
+              Домики с украшением, банкет на природе, фейерверк, хороводы и
+              подарки от Деда Мороза!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <footer>
+      <p>© 2025 Kurort. Все права защищены.</p>
+    </footer>
+
+    <div class="modal">
+      <div class="modal__inner">
+        <div class="modal__body">
+          <button class="modal__close">
+            <img
+              style="width: 25px"
+              src="https://img.icons8.com/?size=100&id=79023&format=png&color=000000"
+              alt=""
+            />
+          </button>
+          <h1 class="modal__title">Бронь</h1>
+
+          <form class="modal__form">
+            <input
+              class="modal__input"
+              placeholder="Ваше имя"
+              name="name"
+              id="user_name"
+            />
+            <input
+              class="modal__input"
+              placeholder="Телефон *"
+              name="phone"
+              id="user_phone"
+              required
+            />
+            <textarea
+              id="user_text"
+              name="text"
+              class="modal__input-textarea"
+              placeholder="текст заявки (не обязательно)"
+            ></textarea>
+            <button
+              id="send_modal"
+              class="products__btn"
+              style="width: 100%; max-width: 100%"
+              type="submit"
+            >
+              ОТПРАВИТЬ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="request.js"></script>
+    <script src="main.js"></script>
+
+    <!-- Init Swiper -->
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script>
+  </body>
+</html>

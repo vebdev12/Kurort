@@ -1,0 +1,92 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  overflow-x: hidden;
+
+  background-color: #f8f8f8;
+}
+
+.admin__wrapper {
+  width: 100%;
+  padding: 20px 30px;
+}
+.admin {
+}
+
+.admin__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin__item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(151, 184, 255);
+  background-color: #fff;
+  padding: 20px;
+  max-width: 250px;
+  width: 100%;
+
+  border-radius: 10px;
+
+  position: relative;
+}
+
+.admin__item-name {
+  font-weight: 600;
+  font-size: 23px;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.admin__item-text {
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.admin__item-phone {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.admin__item-date {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.admin__delete {
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.admin__delete img {
+  width: 100%;
+}
+
+.admin__nocontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  display: none;
+}
+
+.admin__nocontent-text {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ панель | Вход</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="login_wrapper">
+      <div class="login">
+        <h1 class="login__title">Вход</h1>
+        <div class="login__form">
+          <input class="login__input" placeholder="Введите логин" id="login" />
+          <input
+            class="login__input"
+            placeholder="Введите пароль"
+            type="password"
+            id="password"
+          />
+          <!-- <span class="login__error">Не корректные данные аккаунта</span> -->
+          <button class="login__btn" id="login_btn">Войти</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../request.js"></script>
+    <script src="./admin-login.js"></script>
+  </body>
+</html>
