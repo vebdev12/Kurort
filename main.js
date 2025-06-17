@@ -66,7 +66,7 @@ function countdown(targetDate, elementId) {
     const difference = targetTime - now;
 
     if (difference <= 0) {
-      document.getElementById(elementId).innerHTML = "Countdown is over!";
+      document.getElementById(elementId).innerHTML = "Акция закончилась";
       clearInterval(intervalId);
       return;
     }
@@ -84,7 +84,7 @@ function countdown(targetDate, elementId) {
   updateCountdown();
 }
 
-const targetDate = "2025-07-31T23:59:59";
+const targetDate = "2025-08-31T23:59:59";
 const countdownElementId = "countdown";
 
 countdown(targetDate, countdownElementId);
